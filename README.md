@@ -25,6 +25,31 @@ Twitter(X)の「共有」メニューから、ツイートの本文・投稿日�
 
 ---
 
+## 📸 スクリーンショット
+
+<div align="center">
+  <table>
+    <tr>
+      <th align="center"><b>共有メニュー（ワンタップ実行）</b></th>
+      <th align="center"><b>設定画面（通常起動時）</b></th>
+    </tr>
+    <tr>
+      <td align="center" valign="top">
+        <img src="docs/images/share_screen.jpg" width="300" alt="共有画面" />
+        <br />
+        <sub>Twitter(X)の共有シートからワンタップで即座にコピー</sub>
+      </td>
+      <td align="center" valign="top">
+        <img src="docs/images/settings_screen.jpg" width="300" alt="設定画面" />
+        <br />
+        <sub>出力モードや絵文字フィルタ・引用設定をカスタマイズ</sub>
+      </td>
+    </tr>
+  </table>
+</div>
+
+---
+
 ## ✨ 主な特徴
 
 - 🚀 **共有メニューからワンタップ実行**:
