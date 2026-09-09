@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="?android:attr/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TwiCopy 設定"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="?android:attr/textColorPrimary" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="16dp"
+            android:text="Twitter(X)の共有メニューから「TwiCopy」を選択すると、バックグラウンドでツイート情報（本文・日時・画像URL等）を自動取得してクリップボードにコピーします。"
+            android:textSize="13sp"
+            android:textColor="?android:attr/textColorSecondary" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#22000000"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 出力モード -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="出力モード"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="?android:attr/textColorPrimary" />
+
+        <RadioGroup
+            android:id="@+id/rgOutputMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/rbModeNormal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="通常（本文 ＋ 画像URL ＋ 元URL）" />
+
+            <RadioButton
+                android:id="@+id/rbModeImageOnly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="画像URLのみ" />
+
+            <RadioButton
+                android:id="@+id/rbModeNoImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="画像URLなし（本文 ＋ 元URL）" />
+        </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#22000000"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 絵文字除去レベル -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="絵文字除去・文字化け対策"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="?android:attr/textColorPrimary" />
+
+        <RadioGroup
+            android:id="@+id/rgEmojiLevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/rbEmojiNone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 - すべての絵文字を残す" />
+
+            <RadioButton
+                android:id="@+id/rbEmojiComposite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 - 合成絵文字を取り除く" />
+
+            <RadioButton
+                android:id="@+id/rbEmojiFull"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 - 掲示板用Shift_JIS互換（絵文字消去）" />
+        </RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#22000000"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 整形オプション -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="整形オプション"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="?android:attr/textColorPrimary" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/swIncludeQuote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="引用リツイートを含める" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/swSwapQuote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="引用元を先頭に配置" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/swRemoveBlankLines"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            android:text="連続する空行を削除" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#22000000"
+            android:layout_marginBottom="16dp" />
+
+        <!-- 日時フォーマット -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="日時フォーマット"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="?android:attr/textColorPrimary" />
+
+        <EditText
+            android:id="@+id/etDateFormat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="24dp"
+            android:hint="例: yyyy/MM/dd HH:mm:ss"
+            android:singleLine="true" />
+
+        <!-- 保存ボタン -->
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="設定を保存"
+            android:textSize="15sp" />
+
+        <!-- アプリ終了ボタン -->
+        <Button
+            android:id="@+id/btnExit"
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="10dp"
+            android:text="アプリを終了"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+</ScrollView>
